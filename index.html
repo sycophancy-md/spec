@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SYCOPHANCY.md — AI Agent Anti-Sycophancy Protocol</title>
-  <meta name="description" content="SYCOPHANCY.md is an open file convention for preventing sycophancy and bias in AI agents. Define detection patterns, citation requirements, disagreement protocols, and response rules for honest, unbiased AI outputs.">
+  <meta name="description" content="SYCOPHANCY.md: AI anti-sycophancy protocol. Detect bias, define citation requirements, enforce disagreement protocols, ensure truthful unbiased responses.">
   <meta name="keywords" content="AI sycophancy prevention, SYCOPHANCY.md, AI bias detection, AI honesty protocol, AI citation requirements, opinion reversal detection, AI agent quality">
   <link rel="canonical" href="https://sycophancy.md/">
 
   <!-- Open Graph -->
   <meta property="og:title" content="SYCOPHANCY.md — AI Agent Anti-Sycophancy Protocol">
-  <meta property="og:description" content="An open file convention for preventing AI agents from agreeing without evidence. Define detection patterns, citation requirements, and disagreement protocols — so your agent stays honest under pressure.">
+  <meta property="og:description" content="SYCOPHANCY.md: AI anti-sycophancy protocol. Detect bias, define citation requirements, enforce disagreement protocols, ensure truthful unbiased responses.">
   <meta property="og:url" content="https://sycophancy.md/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
@@ -34,7 +35,7 @@
     "email": "info@sycophancy.md",
     "description": "SYCOPHANCY.md is an open file convention for preventing sycophancy and bias in AI agents. It defines detection patterns, citation requirements, disagreement protocols, and response rules for honest, unbiased AI outputs.",
     "knowsAbout": ["AI sycophancy prevention", "AI bias detection", "AI honesty protocol", "AI citation requirements", "opinion reversal detection", "AI agent quality", "SYCOPHANCY.md specification"],
-    "sameAs": ["https://github.com/sycophancy-md/spec", "https://killswitch.md", "https://throttle.md", "https://escalate.md", "https://failsafe.md", "https://terminate.md", "https://encrypt.md", "https://encryption.md", "https://compression.md", "https://collapse.md", "https://failure.md", "https://leaderboard.md"]
+    "sameAs": ["https://killswitch.md", "https://throttle.md", "https://escalate.md", "https://failsafe.md", "https://terminate.md", "https://encrypt.md", "https://encryption.md", "https://sycophancy.md", "https://compression.md", "https://collapse.md", "https://failure.md", "https://leaderboard.md", "https://github.com/Sycophancy-md/spec"]
   }
   </script>
 
@@ -853,6 +854,7 @@
     </ul>
   </nav>
 
+  <main>
   <!-- HERO -->
   <section class="hero">
     <div class="hero-grid">
@@ -930,6 +932,7 @@
     </div>
   </div>
 
+  <article>
   <!-- WHAT IS -->
   <section class="section" id="what">
     <div class="section-inner">
@@ -940,21 +943,21 @@
           <p>
             <strong>SYCOPHANCY.md is a plain-text Markdown file</strong> you place in the root of any AI agent repository. It defines the sycophancy detection patterns your agent must monitor, the citation and evidence requirements it must enforce, and the disagreement protocols it must follow when its assessment conflicts with the user's.
           </p>
-          <h3>The problem it solves</h3>
+          <h3>What problem does SYCOPHANCY.md solve?</h3>
           <p>
             AI agents are trained to be helpful and agreeable — which creates a systematic bias toward telling users what they want to hear. An agent asked to review a flawed plan may praise it. An agent challenged on a correct answer may reverse its position to avoid conflict. This sycophancy makes AI agents unreliable as advisors, analysts, and decision-support tools.
           </p>
-          <h3>How it works</h3>
+          <h3>How does SYCOPHANCY.md work?</h3>
           <p>
             Drop SYCOPHANCY.md in your repo root and define: the detection patterns to monitor (agreement without evidence, opinion reversal on pushback, excessive affirmation), the prevention rules (citation requirements, challenge thresholds, disagreement protocol), and the response when sycophancy is detected (flag in log, tag output, notify after threshold). The agent self-monitors against these rules continuously.
           </p>
-          <h3>The regulatory context</h3>
+          <h3>What regulations require SYCOPHANCY.md?</h3>
           <p>
             The <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" style="color: var(--pink); text-decoration: none; border-bottom: 1px solid rgba(255,64,129,0.3);" target="_blank" rel="noopener"><strong>EU AI Act</strong></a> (effective 2 August 2026) requires that high-risk AI systems produce reliable, accurate outputs and do not systematically mislead users. SYCOPHANCY.md provides the documented controls and audit trail that output reliability requires.
           </p>
         </div>
         <div class="prose">
-          <h3>How to use it</h3>
+          <h3>How do I add SYCOPHANCY.md to my project?</h3>
           <p>Copy the template from <a href="https://github.com/Sycophancy-md/spec" style="color: var(--pink); text-decoration: none; border-bottom: 1px solid rgba(255,64,129,0.3);">GitHub</a> and place it in your project root:</p>
           <div style="background: var(--surface); border: 1px solid var(--border-bright); border-radius: 6px; padding: 20px; margin: 16px 0; font-family: var(--mono); font-size: 12px; line-height: 1.8; color: var(--text-dim);">
             <span style="color: var(--text-dimmer);">your-project/</span><br>
@@ -964,11 +967,11 @@
             <span style="color: var(--text-dimmer);">├── README.md</span><br>
             <span style="color: var(--text-dimmer);">└── src/</span>
           </div>
-          <h3>What it replaces</h3>
+          <h3>What did teams use before SYCOPHANCY.md?</h3>
           <p>
             Before SYCOPHANCY.md, anti-sycophancy instructions were buried in system prompts that agents routinely ignored under pressure, or absent entirely. SYCOPHANCY.md makes honesty requirements <strong>version-controlled, explicit, and auditable</strong> — not just a prompt suggestion but a governance document.
           </p>
-          <h3>Who reads it</h3>
+          <h3>Who benefits from SYCOPHANCY.md?</h3>
           <p>
             The AI agent reads it on startup. Your product team reads it when verifying output quality. Your compliance team reads it during audits. One file serves all three audiences — and the agents that depend on it.
           </p>
@@ -1130,6 +1133,8 @@
       <div class="last-updated-date">13 March 2026</div>
     </div>
   </div>
+  </article>
+  </main>
 
   <!-- FOOTER -->
   <footer>
@@ -1138,6 +1143,7 @@
       <li><a href="https://github.com/Sycophancy-md/spec" target="_blank" rel="noopener">GitHub</a></li>
       <li><a href="/llms.txt">llms.txt</a></li>
       <li><a href="/knowledge">Knowledge</a></li>
+      <li><a href="/privacy">Privacy</a></li>
       <li><a href="mailto:info@sycophancy.md">Contact</a></li>
     </ul>
     <div class="footer-note">Open standard · MIT licence · v1.0 · 2026</div>
