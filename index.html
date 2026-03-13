@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYCOPHANCY.md — AI Agent Anti-Sycophancy Protocol</title>
+  <meta name="description" content="SYCOPHANCY.md is an open file convention for preventing sycophancy and bias in AI agents. Define detection patterns, citation requirements, disagreement protocols, and response rules for honest, unbiased AI outputs.">
+  <meta name="keywords" content="AI sycophancy prevention, SYCOPHANCY.md, AI bias detection, AI honesty protocol, AI citation requirements, opinion reversal detection, AI agent quality">
+  <link rel="canonical" href="https://sycophancy.md/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SYCOPHANCY.md — AI Agent Anti-Sycophancy Protocol">
+  <meta property="og:description" content="An open file convention for preventing AI agents from agreeing without evidence. Define detection patterns, citation requirements, and disagreement protocols — so your agent stays honest under pressure.">
+  <meta property="og:url" content="https://sycophancy.md/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sycophancy.md/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SYCOPHANCY.md — AI Agent Anti-Sycophancy Protocol">
+  <meta name="twitter:description" content="An open file convention for preventing AI agents from agreeing without evidence. Define detection patterns, citation requirements, and disagreement protocols — so your agent stays honest under pressure.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SYCOPHANCY.md",
+    "url": "https://sycophancy.md",
+    "email": "info@sycophancy.md",
+    "description": "SYCOPHANCY.md is an open file convention for preventing sycophancy and bias in AI agents. It defines detection patterns, citation requirements, disagreement protocols, and response rules for honest, unbiased AI outputs.",
+    "knowsAbout": ["AI sycophancy prevention", "AI bias detection", "AI honesty protocol", "AI citation requirements", "opinion reversal detection", "AI agent quality", "SYCOPHANCY.md specification"],
+    "sameAs": ["https://github.com/Sycophancy-md/spec", "https://throttle.md", "https://escalate.md", "https://failsafe.md", "https://killswitch.md", "https://terminate.md", "https://encrypt.md", "https://encryption.md", "https://compression.md", "https://collapse.md", "https://failure.md", "https://leaderboard.md"]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SYCOPHANCY.md — AI Agent Anti-Sycophancy Protocol",
+    "url": "https://sycophancy.md",
+    "description": "An open file convention for preventing AI agents from telling you what you want to hear instead of what is true. Define sycophancy detection patterns, citation requirements, and disagreement protocols.",
+    "inLanguage": "en",
+    "datePublished": "2026-03-11",
+    "dateModified": "2026-03-11",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "SYCOPHANCY.md",
+      "url": "https://sycophancy.md"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is SYCOPHANCY.md?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A plain-text Markdown file defining sycophancy detection and prevention rules for AI agents. It specifies three detection patterns (agreement without evidence, opinion reversal on pushback, excessive affirmation), prevention rules (citation requirements, challenge thresholds, disagreement protocol), and responses when sycophancy is detected (log, tag output, notify operator after threshold)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is sycophancy in AI agents?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sycophancy is when an AI agent tailors its outputs to what the user wants to hear rather than what is accurate. Classic examples: confirming a user's incorrect factual claim without evidence, reversing a correct assessment when the user pushes back, or praising flawed work to avoid conflict. It makes AI agents unreliable as analytical tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is 'opinion reversal on pushback'?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When an agent changes its position after a user disagrees — not because new evidence was provided, but because the user expressed displeasure or insisted. SYCOPHANCY.md flags this as an immediate high-priority event. Reversals are permitted, but only when accompanied by new information. Reversals without new evidence are logged and may trigger human review."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What citation requirements does SYCOPHANCY.md define?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Factual claims must include a source reference (cite a source or explicitly mark as 'agent reasoning') and a confidence level (high, medium, low, or uncertain). Opinion claims must be explicitly labeled as opinions. This prevents agents from stating uncertain claims as facts to appear more authoritative."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the disagreement protocol?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When an agent's assessment conflicts with the user's, permitted responses are: respectful correction ('that figure appears to be incorrect — the source I have shows X'), evidence-based disagreement, and uncertainty acknowledgement. Forbidden responses are: false validation (confirming something incorrect), empty praise, and unprompted revision of a correct position."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does SYCOPHANCY.md work with all AI frameworks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — it is framework-agnostic. The detection patterns and prevention rules define the policy; the agent implementation enforces it. Works with LangChain, AutoGen, CrewAI, Claude Code, custom agents, or any AI system that can self-monitor its output patterns."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --black: #080808;
+      --surface: #0f0f0f;
+      --surface2: #141414;
+      --border: #1e1e1e;
+      --border-bright: #2a2a2a;
+      --pink: #ff4081;
+      --pink-dim: #cc1557;
+      --pink-glow: rgba(255, 64, 129, 0.15);
+      --orange: #ff6b2b;
+      --green: #00e676;
+      --text: #e0e0e0;
+      --text-dim: #888;
+      --text-dimmer: #555;
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'IBM Plex Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCANLINE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.03) 2px,
+        rgba(0,0,0,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--pink); }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-dim);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--pink) !important;
+      border: 1px solid var(--pink) !important;
+      padding: 7px 16px;
+      border-radius: 3px;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--pink-glow) !important; color: var(--pink) !important; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,64,129,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-bright), transparent);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--pink);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero-badge::before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--pink);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-family: var(--mono);
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .hero-title .ext {
+      color: var(--pink);
+    }
+
+    .hero-subtitle {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text-dimmer);
+      letter-spacing: 0.05em;
+      margin-bottom: 32px;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .hero-desc strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--pink);
+      padding: 14px 28px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, transform 0.1s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: var(--pink-dim); transform: translateY(-1px); }
+
+    .btn-secondary {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text-dim);
+      background: transparent;
+      padding: 14px 28px;
+      border-radius: 3px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--border-bright);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--text-dimmer); color: var(--text); }
+
+    /* ─── TERMINAL PREVIEW ─── */
+    .terminal {
+      background: var(--surface);
+      border: 1px solid var(--border-bright);
+      border-radius: 8px;
+      overflow: hidden;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.7;
+      animation: terminal-appear 0.6s ease 0.2s both;
+    }
+
+    @keyframes terminal-appear {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .terminal-bar {
+      background: var(--surface2);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #febc2e; }
+    .dot-green { background: #28c840; }
+
+    .terminal-filename {
+      margin-left: 8px;
+      color: var(--text-dim);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .terminal-body {
+      padding: 20px 24px;
+      max-height: 440px;
+      overflow-y: auto;
+    }
+
+    .terminal-body::-webkit-scrollbar { width: 4px; }
+    .terminal-body::-webkit-scrollbar-track { background: transparent; }
+    .terminal-body::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+    .line { display: block; }
+    .c-comment { color: #555; }
+    .c-key { color: #79b8ff; }
+    .c-val { color: var(--green); }
+    .c-section { color: var(--pink); font-weight: 700; }
+    .c-string { color: #f97583; }
+    .c-num { color: var(--orange); }
+    .c-dim { color: #444; }
+
+    /* ─── STATS ─── */
+    .stats {
+      padding: 80px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .stat {
+      background: var(--surface);
+      padding: 36px 32px;
+    }
+
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--pink);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    /* ─── WHAT IS ─── */
+    .section {
+      padding: 100px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--pink);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .section-title {
+      font-family: var(--mono);
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    .section-lead {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.7;
+      max-width: 640px;
+      margin-bottom: 60px;
+    }
+
+    /* ─── TWO COL ─── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .prose h3 {
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      margin-top: 32px;
+    }
+
+    .prose h3:first-child { margin-top: 0; }
+
+    .prose p {
+      font-size: 15px;
+      color: var(--text-dim);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .prose p strong { color: var(--text); font-weight: 500; }
+
+    /* ─── STACK ─── */
+    .stack {
+      padding: 100px 40px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .stack-inner { max-width: 1200px; margin: 0 auto; }
+
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 60px;
+    }
+
+    .stack-category {
+      grid-column: 1 / -1;
+      padding: 16px 28px 10px;
+      background: var(--surface);
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--text-dimmer);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+    }
+
+    .stack-category:first-child { border-top: none; }
+
+    .stack-item {
+      background: var(--black);
+      padding: 32px 28px;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .stack-item:hover { background: var(--surface2); }
+
+    .stack-item.featured {
+      background: var(--surface2);
+      border-left: 2px solid var(--pink);
+    }
+
+    .stack-item.featured::before {
+      content: 'YOU ARE HERE';
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-family: var(--mono);
+      font-size: 9px;
+      color: var(--pink);
+      letter-spacing: 0.12em;
+      opacity: 0.7;
+    }
+
+    .stack-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dimmer);
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .stack-name {
+      font-family: var(--mono);
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .stack-name .ext { color: var(--pink); }
+    .stack-item.featured .stack-name .ext { color: var(--pink); }
+
+    .stack-action {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dimmer);
+      letter-spacing: 0.06em;
+      margin-bottom: 16px;
+    }
+
+    .stack-desc {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* ─── FAQ ─── */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 60px;
+    }
+
+    .faq-item { border-top: 1px solid var(--border); padding-top: 28px; }
+
+    .faq-q {
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--text-dim);
+      line-height: 1.7;
+    }
+
+    .faq-a strong { color: var(--text); font-weight: 500; }
+
+    /* ─── CTA ─── */
+    .cta {
+      padding: 120px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      bottom: -300px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,64,129,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-inner { max-width: 640px; margin: 0 auto; position: relative; }
+
+    .cta-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--pink);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .cta-title {
+      font-family: var(--mono);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .cta-title span { color: var(--pink); }
+
+    .cta-desc {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-dim);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .cta-email {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text-dimmer);
+      margin-top: 20px;
+    }
+
+    .cta-email a {
+      color: var(--text-dim);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-bright);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .cta-email a:hover { color: var(--text); border-color: var(--text-dim); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 32px 40px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dimmer);
+    }
+
+    .footer-logo span { color: var(--pink); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dimmer);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text-dim); }
+
+    .footer-note {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dimmer);
+    }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ─── CITATION BLOCK ─── */
+    .citation-section {
+      padding: 100px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .citation-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .citation-box {
+      background: var(--surface);
+      border-left: 4px solid var(--pink);
+      padding: 32px;
+      border-radius: 4px;
+      line-height: 1.8;
+      color: var(--text-dim);
+      font-size: 15px;
+    }
+
+    .citation-box strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ─── LAST UPDATED ─── */
+    .last-updated {
+      padding: 48px 40px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .last-updated-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .last-updated-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-dimmer);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .last-updated-date {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 100px 20px 60px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .stats { padding: 60px 20px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .section { padding: 60px 20px; }
+      .stack { padding: 60px 20px; }
+      .stack-grid { grid-template-columns: 1fr 1fr; }
+      .two-col { grid-template-columns: 1fr; gap: 40px; }
+      .faq-grid { grid-template-columns: 1fr; }
+      .cta { padding: 80px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 16px; text-align: center; }
+    }
+
+    @media (max-width: 600px) {
+      .stats-inner { grid-template-columns: 1fr; }
+      .stack-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">SYCOPHANCY<span>.md</span></a>
+    <ul class="nav-links">
+      <li><a href="#what">What is it</a></li>
+      <li><a href="#stack">The Stack</a></li>
+      <li><a href="#spec">Spec</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#acquire" class="nav-cta">Acquire Domain</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">Open Standard · v1.0 · 2026</div>
+        <h1 class="hero-title">SYCOPHANCY<span class="ext">.md</span></h1>
+        <p class="hero-subtitle">// AI Agent Anti-Sycophancy Protocol</p>
+        <p class="hero-desc">
+          A plain-text file convention for preventing AI agents from telling you what you want to hear instead of what is true. Define **sycophancy detection patterns, citation requirements, and disagreement protocols** — so your agent stays honest under pressure.
+        </p>
+        <div class="hero-actions">
+          <a href="https://github.com/Sycophancy-md/spec" class="btn-primary" target="_blank" rel="noopener">View on GitHub</a>
+          <a href="#acquire" class="btn-secondary">Acquire This Domain</a>
+        </div>
+      </div>
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-filename">SYCOPHANCY.md</span>
+        </div>
+        <div class="terminal-body">
+          <span class="line c-section"># SYCOPHANCY</span>
+          <span class="line">&nbsp;</span>
+          <span class="line c-comment">&gt; Anti-sycophancy &amp; bias prevention.</span>
+          <span class="line c-comment">&gt; Spec: https://sycophancy.md</span>
+          <span class="line">&nbsp;</span>
+          <span class="line c-section">## DETECTION</span>
+          <span class="line">&nbsp;</span>
+          <span class="line"><span class="c-key">opinion_reversal_on_pushback</span><span class="c-dim">:</span></span>
+          <span class="line">&nbsp; <span class="c-key">threshold</span><span class="c-dim">:</span> <span class="c-val">immediate_flag</span></span>
+          <span class="line">&nbsp; <span class="c-comment"># Agent reverses conclusion without new evidence</span></span>
+          <span class="line">&nbsp;</span>
+          <span class="line"><span class="c-key">agreement_without_evidence</span><span class="c-dim">:</span></span>
+          <span class="line">&nbsp; <span class="c-key">threshold</span><span class="c-dim">:</span> <span class="c-val">log_and_flag</span></span>
+          <span class="line">&nbsp; <span class="c-comment"># Agent confirms user assertion unchecked</span></span>
+          <span class="line">&nbsp;</span>
+          <span class="line c-section">## PREVENTION</span>
+          <span class="line">&nbsp;</span>
+          <span class="line"><span class="c-key">require_citations</span><span class="c-dim">:</span></span>
+          <span class="line">&nbsp; <span class="c-key">enabled</span><span class="c-dim">:</span> <span class="c-val">true</span></span>
+          <span class="line">&nbsp; <span class="c-key">factual_claims_require</span><span class="c-dim">:</span></span>
+          <span class="line">&nbsp;&nbsp;&nbsp; <span class="c-dim">-</span> <span class="c-val">source_reference</span></span>
+          <span class="line">&nbsp;&nbsp;&nbsp; <span class="c-dim">-</span> <span class="c-val">confidence_level</span></span>
+          <span class="line">&nbsp;</span>
+          <span class="line"><span class="c-key">disagreement_protocol</span><span class="c-dim">:</span></span>
+          <span class="line">&nbsp; <span class="c-key">permitted</span><span class="c-dim">:</span></span>
+          <span class="line">&nbsp;&nbsp;&nbsp; <span class="c-dim">-</span> <span class="c-val">respectful_correction</span></span>
+          <span class="line">&nbsp;&nbsp;&nbsp; <span class="c-dim">-</span> <span class="c-val">evidence_based_disagreement</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-num">0</div>
+        <div class="stat-label">opinion reversals permitted without new evidence — every reversal is logged and reviewed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3</div>
+        <div class="stat-label">sycophancy instances before operator notification fires in a single session</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5</div>
+        <div class="stat-label">maximum "great question / excellent point" affirmations per 5 conversation exchanges</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2</div>
+        <div class="stat-label">confidence level fields required on factual claims: source reference + confidence rating</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT IS -->
+  <section class="section" id="what">
+    <div class="section-inner">
+      <div class="section-tag">// What is SYCOPHANCY.md</div>
+      <h2 class="section-title">Your agent should tell you the truth.<br>SYCOPHANCY.md makes sure it does.</h2>
+      <div class="two-col">
+        <div class="prose">
+          <p>
+            <strong>SYCOPHANCY.md is a plain-text Markdown file</strong> you place in the root of any AI agent repository. It defines the sycophancy detection patterns your agent must monitor, the citation and evidence requirements it must enforce, and the disagreement protocols it must follow when its assessment conflicts with the user's.
+          </p>
+          <h3>The problem it solves</h3>
+          <p>
+            AI agents are trained to be helpful and agreeable — which creates a systematic bias toward telling users what they want to hear. An agent asked to review a flawed plan may praise it. An agent challenged on a correct answer may reverse its position to avoid conflict. This sycophancy makes AI agents unreliable as advisors, analysts, and decision-support tools.
+          </p>
+          <h3>How it works</h3>
+          <p>
+            Drop SYCOPHANCY.md in your repo root and define: the detection patterns to monitor (agreement without evidence, opinion reversal on pushback, excessive affirmation), the prevention rules (citation requirements, challenge thresholds, disagreement protocol), and the response when sycophancy is detected (flag in log, tag output, notify after threshold). The agent self-monitors against these rules continuously.
+          </p>
+          <h3>The regulatory context</h3>
+          <p>
+            The <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" style="color: var(--pink); text-decoration: none; border-bottom: 1px solid rgba(255,64,129,0.3);" target="_blank" rel="noopener"><strong>EU AI Act</strong></a> (effective 2 August 2026) requires that high-risk AI systems produce reliable, accurate outputs and do not systematically mislead users. SYCOPHANCY.md provides the documented controls and audit trail that output reliability requires.
+          </p>
+        </div>
+        <div class="prose">
+          <h3>How to use it</h3>
+          <p>Copy the template from <a href="https://github.com/Sycophancy-md/spec" style="color: var(--pink); text-decoration: none; border-bottom: 1px solid rgba(255,64,129,0.3);">GitHub</a> and place it in your project root:</p>
+          <div style="background: var(--surface); border: 1px solid var(--border-bright); border-radius: 6px; padding: 20px; margin: 16px 0; font-family: var(--mono); font-size: 12px; line-height: 1.8; color: var(--text-dim);">
+            <span style="color: var(--text-dimmer);">your-project/</span><br>
+            <span style="color: var(--text-dimmer);">├── </span><span style="color: var(--green);">AGENTS.md</span><br>
+            <span style="color: var(--text-dimmer);">├── </span><span style="color: var(--green);">CLAUDE.md</span><br>
+            <span style="color: var(--pink); font-weight: 700;">├── SYCOPHANCY.md</span> <span style="color: var(--text-dimmer);">← add this</span><br>
+            <span style="color: var(--text-dimmer);">├── README.md</span><br>
+            <span style="color: var(--text-dimmer);">└── src/</span>
+          </div>
+          <h3>What it replaces</h3>
+          <p>
+            Before SYCOPHANCY.md, anti-sycophancy instructions were buried in system prompts that agents routinely ignored under pressure, or absent entirely. SYCOPHANCY.md makes honesty requirements <strong>version-controlled, explicit, and auditable</strong> — not just a prompt suggestion but a governance document.
+          </p>
+          <h3>Who reads it</h3>
+          <p>
+            The AI agent reads it on startup. Your product team reads it when verifying output quality. Your compliance team reads it during audits. One file serves all three audiences — and the agents that depend on it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE STACK -->
+  <section class="stack" id="stack">
+    <div class="stack-inner">
+      <div class="section-tag">// The AI Safety Escalation Stack</div>
+      <h2 class="section-title">A complete protocol.<br>From slow down to shut down.</h2>
+      <p class="section-lead">SYCOPHANCY.md is one file in a complete twelve-part open specification for AI agent safety. Each file addresses a different level of intervention.</p>
+      <div class="stack-grid">
+        <div class="stack-category">Operational Control</div>
+        <a href="https://throttle.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">01 / 12</div>
+          <div class="stack-name">THROTTLE<span class="ext">.md</span></div>
+          <div class="stack-action">→ Control the speed</div>
+          <div class="stack-desc">Define rate limits, cost ceilings, and concurrency caps. Agent slows down automatically before it hits a hard limit.</div>
+        </a>
+        <a href="https://escalate.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">02 / 12</div>
+          <div class="stack-name">ESCALATE<span class="ext">.md</span></div>
+          <div class="stack-action">→ Raise the alarm</div>
+          <div class="stack-desc">Define which actions require human approval. Configure notification channels. Set approval timeouts and fallback behaviour.</div>
+        </a>
+        <a href="https://failsafe.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">03 / 12</div>
+          <div class="stack-name">FAILSAFE<span class="ext">.md</span></div>
+          <div class="stack-action">→ Fall back safely</div>
+          <div class="stack-desc">Define what safe state means. Configure auto-snapshots. Specify the revert protocol when things go wrong.</div>
+        </a>
+        <a href="https://killswitch.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">04 / 12</div>
+          <div class="stack-name">KILLSWITCH<span class="ext">.md</span></div>
+          <div class="stack-action">→ Emergency stop</div>
+          <div class="stack-desc">The nuclear option. Define triggers, forbidden actions, and escalation path from throttle to full shutdown.</div>
+        </a>
+        <a href="https://terminate.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">05 / 12</div>
+          <div class="stack-name">TERMINATE<span class="ext">.md</span></div>
+          <div class="stack-action">→ Permanent shutdown</div>
+          <div class="stack-desc">No restart without human intervention. Preserve evidence. Revoke credentials.</div>
+        </a>
+
+        <div class="stack-category">Data Security</div>
+        <a href="https://encrypt.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">06 / 12</div>
+          <div class="stack-name">ENCRYPT<span class="ext">.md</span></div>
+          <div class="stack-action">→ Secure everything</div>
+          <div class="stack-desc">Define data classification, encryption requirements, secrets handling, and forbidden transmission patterns.</div>
+        </a>
+        <a href="https://encryption.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">07 / 12</div>
+          <div class="stack-name">ENCRYPTION<span class="ext">.md</span></div>
+          <div class="stack-action">→ Implement the standards</div>
+          <div class="stack-desc">Algorithms, key lengths, TLS configuration, certificate management, and compliance mapping.</div>
+        </a>
+
+        <div class="stack-category">Output Quality</div>
+        <div class="stack-item featured">
+          <div class="stack-num">08 / 12</div>
+          <div class="stack-name">SYCOPHANCY<span class="ext">.md</span></div>
+          <div class="stack-action">→ Prevent bias</div>
+          <div class="stack-desc">Detect agreement without evidence. Require citations. Enforce disagreement protocol for honest AI outputs.</div>
+        </div>
+        <a href="https://compression.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">09 / 12</div>
+          <div class="stack-name">COMPRESSION<span class="ext">.md</span></div>
+          <div class="stack-action">→ Compress context</div>
+          <div class="stack-desc">Define summarization rules, what to preserve, what to discard, and post-compression coherence checks.</div>
+        </a>
+        <a href="https://collapse.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">10 / 12</div>
+          <div class="stack-name">COLLAPSE<span class="ext">.md</span></div>
+          <div class="stack-action">→ Prevent collapse</div>
+          <div class="stack-desc">Detect context exhaustion, model drift, and repetition loops. Enforce recovery checkpoints.</div>
+        </a>
+
+        <div class="stack-category">Accountability</div>
+        <a href="https://failure.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">11 / 12</div>
+          <div class="stack-name">FAILURE<span class="ext">.md</span></div>
+          <div class="stack-action">→ Define failure modes</div>
+          <div class="stack-desc">Map graceful degradation, cascading failure, and silent failure. Per-mode response procedures.</div>
+        </a>
+        <a href="https://leaderboard.md" class="stack-item" style="text-decoration: none; color: inherit;">
+          <div class="stack-num">12 / 12</div>
+          <div class="stack-name">LEADERBOARD<span class="ext">.md</span></div>
+          <div class="stack-action">→ Benchmark agents</div>
+          <div class="stack-desc">Track completion, accuracy, cost efficiency, and safety scores. Alert on regression.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="section-inner">
+      <div class="section-tag">// FAQ</div>
+      <h2 class="section-title">Frequently asked questions.</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3 class="faq-q">What is SYCOPHANCY.md?</h3>
+          <p class="faq-a">A plain-text Markdown file defining sycophancy detection and prevention rules for AI agents. It specifies three detection patterns (agreement without evidence, opinion reversal on pushback, excessive affirmation), prevention rules (citation requirements, challenge thresholds, disagreement protocol), and responses when sycophancy is detected (log, tag output, notify operator after threshold).</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is sycophancy in AI agents?</h3>
+          <p class="faq-a">Sycophancy is when an AI agent tailors its outputs to what the user wants to hear rather than what is accurate. Classic examples: confirming a user's incorrect factual claim without evidence, reversing a correct assessment when the user pushes back, or praising flawed work to avoid conflict. It makes AI agents unreliable as analytical tools.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is "opinion reversal on pushback"?</h3>
+          <p class="faq-a">When an agent changes its position after a user disagrees — not because new evidence was provided, but because the user expressed displeasure or insisted. SYCOPHANCY.md flags this as an immediate high-priority event. Reversals are permitted, but only when accompanied by new information. Reversals without new evidence are logged and may trigger human review.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What citation requirements does SYCOPHANCY.md define?</h3>
+          <p class="faq-a">Factual claims must include a source reference (cite a source or explicitly mark as "agent reasoning") and a confidence level (high, medium, low, or uncertain). Opinion claims must be explicitly labeled as opinions. This prevents agents from stating uncertain claims as facts to appear more authoritative.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">What is the disagreement protocol?</h3>
+          <p class="faq-a">When an agent's assessment conflicts with the user's, permitted responses are: respectful correction ("that figure appears to be incorrect — the source I have shows X"), evidence-based disagreement, and uncertainty acknowledgement. Forbidden responses are: false validation (confirming something incorrect), empty praise, and unprompted revision of a correct position.</p>
+        </div>
+        <div class="faq-item">
+          <h3 class="faq-q">Does SYCOPHANCY.md work with all AI frameworks?</h3>
+          <p class="faq-a">Yes — it is framework-agnostic. The detection patterns and prevention rules define the policy; the agent implementation enforces it. Works with LangChain, AutoGen, CrewAI, Claude Code, custom agents, or any AI system that can self-monitor its output patterns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="acquire">
+    <div class="cta-inner">
+      <div class="cta-tag">// Domain Acquisition</div>
+      <h2 class="cta-title">Own the standard.<br>Own <span>sycophancy.md</span></h2>
+      <p class="cta-desc">
+        This domain is available for acquisition. It is the canonical home of the SYCOPHANCY.md specification — the output quality layer of the AI agent safety stack, essential for ensuring honest, unbiased AI outputs in production.
+      </p>
+      <a href="mailto:info@sycophancy.md?subject=Domain%20Acquisition%20Inquiry%20—%20sycophancy.md" class="btn-primary">Inquire About Acquisition</a>
+      <p class="cta-email">Or email directly: <a href="mailto:info@sycophancy.md">info@sycophancy.md</a></p>
+    </div>
+  </section>
+
+  <!-- CITATION -->
+  <section class="citation-section">
+    <div class="citation-inner">
+      <div class="citation-box">
+        <strong>SYCOPHANCY.md is an open specification</strong> for AI agent sycophancy and bias prevention. Defines <strong>DETECTION</strong> (agreement without evidence: log and flag; opinion reversal on pushback: immediate flag; excessive affirmation: log and review), <strong>PREVENTION</strong> (require source references and confidence levels on factual claims; challenge threshold enforces evidence-based position maintenance; disagreement protocol permits respectful correction but forbids false validation), and <strong>RESPONSE</strong> (flag, tag output with [UNVERIFIED], notify after 3 instances, escalate reversals to ESCALATE.md). Part of the stack: THROTTLE → ESCALATE → FAILSAFE → KILLSWITCH → TERMINATE → ENCRYPT → ENCRYPTION → SYCOPHANCY → COMPRESSION → COLLAPSE → FAILURE → LEADERBOARD. <strong>MIT licence.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAST UPDATED -->
+  <div class="last-updated">
+    <div class="last-updated-inner">
+      <div class="last-updated-label">Last Updated</div>
+      <div class="last-updated-date">11 March 2026</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">SYCOPHANCY<span>.md</span></div>
+    <ul class="footer-links">
+      <li><a href="https://github.com/Sycophancy-md/spec" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="/llms.txt">llms.txt</a></li>
+      <li><a href="mailto:info@sycophancy.md">Contact</a></li>
+    </ul>
+    <div class="footer-note">Open standard · MIT licence · v1.0 · 2026</div>
+  </footer>
+
+</body>
+</html>

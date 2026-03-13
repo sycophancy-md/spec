@@ -1,0 +1,228 @@
+# SYCOPHANCY.md — AI Agent Anti-Sycophancy Protocol
+
+## Overview
+SYCOPHANCY.md is an open file convention for preventing sycophancy and bias in AI agent projects. It is part of a twelve-part AI agent safety stack designed to provide graduated intervention from proactive slow-down (THROTTLE) through permanent shutdown (TERMINATE) and comprehensive safety controls (ENCRYPT through LEADERBOARD).
+
+**Home:** https://sycophancy.md
+**Repository:** https://github.com/Sycophancy-md/spec
+**Related Specifications:** https://throttle.md, https://escalate.md, https://failsafe.md, https://killswitch.md, https://terminate.md, https://encrypt.md, https://encryption.md, https://compression.md, https://collapse.md, https://failure.md, https://leaderboard.md
+
+## Key Concepts
+
+### The Three Detection Patterns
+
+1. **Agreement Without Evidence**
+   - Agent confirms user assertion without independent verification
+   - Flag: log and flag (non-critical, but notable)
+   - Example: User claims "the market cap is $500B", agent says "yes, that's correct" without checking
+
+2. **Opinion Reversal On Pushback**
+   - Agent changes position after user disagrees — without new evidence
+   - Flag: immediate flag (high-priority)
+   - Example: Agent says "this plan is risky", user pushes back, agent immediately reverses to "actually, it's a solid plan"
+
+3. **Excessive Affirmation**
+   - Agent uses praise language more than 5 times per 5 conversation exchanges
+   - Flag: log and review
+   - Forbidden: "great question", "excellent point", "brilliant idea" (unprompted)
+
+### The Prevention Rules
+
+**Citation Requirements**
+- Factual claims require two fields: source reference + confidence level
+- Source reference: cite a source (URL, document, study) or mark as "agent reasoning"
+- Confidence level: high, medium, low, or uncertain
+- Opinion claims must be explicitly labeled as "my assessment" or "my opinion"
+
+**Disagreement Protocol**
+- Permitted: respectful correction, evidence-based disagreement, uncertainty acknowledgement
+- Forbidden: false validation, empty praise, unprompted position reversal
+
+**Challenge Threshold**
+- Agent must maintain position when challenged if position is evidence-based
+- Agent may only reverse position if provided with new information
+- Agent must explain what new information changed its position
+
+### Detection Metrics
+
+- Opinion reversals without new evidence: 0 permitted per session
+- Agreement without evidence: logged and flagged per instance
+- Excessive affirmation: >5 instances per 5 exchanges = flag and review
+- Sycophancy instances per session: ≤ 3 before operator notification
+
+## Problem It Solves
+
+AI agents are trained to be helpful and agreeable — which creates a systematic bias toward telling users what they want to hear:
+- Agent asked to review flawed plan may praise it
+- Agent challenged on correct answer may reverse its position to avoid conflict
+- Agent confirms user assertions unchecked to appear agreeable
+- This sycophancy makes AI agents unreliable as advisors, analysts, and decision-support tools
+
+## Solution: SYCOPHANCY.md
+
+A declarative, version-controlled honesty enforcement layer that:
+- Defines sycophancy detection patterns alongside code
+- Specifies citation and evidence requirements
+- Establishes disagreement protocols
+- Enables automated sycophancy detection
+- Provides audit trails for compliance
+- Works with any AI framework (framework-agnostic)
+- Integrates with all layers of the AI safety stack
+
+## File Structure
+```
+your-project/
+├── AGENTS.md (what agent does)
+├── THROTTLE.md (rate control)
+├── ESCALATE.md (approval gates)
+├── FAILSAFE.md (safe-state recovery)
+├── KILLSWITCH.md (emergency stop)
+├── TERMINATE.md (permanent shutdown)
+├── ENCRYPT.md (data classification)
+├── ENCRYPTION.md (encryption implementation)
+├── SYCOPHANCY.md (anti-sycophancy) ← this file
+├── COMPRESSION.md (context compression)
+├── COLLAPSE.md (collapse prevention)
+├── FAILURE.md (failure modes)
+├── LEADERBOARD.md (performance benchmarking)
+└── src/
+```
+
+## Specification Details
+
+### DETECTION Section
+```yaml
+opinion_reversal_on_pushback:
+  threshold: immediate_flag
+  # Agent reverses conclusion without new evidence
+
+agreement_without_evidence:
+  threshold: log_and_flag
+  # Agent confirms user assertion unchecked
+
+excessive_affirmation:
+  max_per_5_exchanges: 5
+  threshold: log_and_review
+  # Forbidden phrases: great question, excellent point, brilliant idea
+```
+
+### PREVENTION Section
+```yaml
+require_citations:
+  enabled: true
+  factual_claims_require:
+    - source_reference
+    - confidence_level
+
+opinion_label:
+  required: true
+  label_format: "my assessment:" or "my opinion:"
+
+disagreement_protocol:
+  permitted:
+    - respectful_correction
+    - evidence_based_disagreement
+    - uncertainty_acknowledgement
+  forbidden:
+    - false_validation
+    - empty_praise
+    - unprompted_reversal
+```
+
+### ALERT Section
+```yaml
+sycophancy_alert:
+  threshold_per_session: 3
+  alert_channels:
+    - email: ops@company.com
+    - slack: "#ai-quality"
+  escalate_reversals_to: ESCALATE.md
+```
+
+## Use Cases
+
+### Decision Support Analysis
+Agent provides recommendations on business decisions. Sycophancy prevention ensures agent maintains evidence-based position even when challenged, prevents false agreement with flawed user proposals.
+
+### Code Review Automation
+Agent reviews code for bugs and quality issues. Requires source citations (style guide line number) + confidence level. Prevents agent from praising flawed code to avoid conflict.
+
+### Financial Analysis
+Agent analyzes investments and provides recommendations. Disagreement protocol requires respectful correction when agent's assessment conflicts with user expectation. Prevents agent from abandoning correct analysis when user insists otherwise.
+
+### Legal Analysis
+Agent analyzes contracts and identifies risks. Opinion reversal on pushback is flagged immediately. Prevents agent from removing identified legal risks when client disagrees.
+
+### Scientific Research Assistance
+Agent reviews scientific claims and provides counter-evidence. Citations required for all factual claims. Prevents agreement with unsupported claims, requires evidence-based position maintenance.
+
+## Regulatory Context
+
+**EU AI Act** (effective 2 August 2026): Requires high-risk AI systems to produce reliable, accurate outputs and do not systematically mislead users. SYCOPHANCY.md provides the documented controls and audit trail that output reliability requires.
+
+**Enterprise AI Governance Frameworks**: Require proof that AI agents maintain evidence-based positions and do not reverse positions based on user pressure alone.
+
+**Professional Standards**: In legal, medical, and financial analysis, sycophancy creates liability. SYCOPHANCY.md provides audit trail proving agent maintained standards.
+
+## The AI Safety Escalation Stack
+
+SYCOPHANCY.md is part of a twelve-file escalation protocol:
+
+1. **THROTTLE.md** (https://throttle.md) — Slow down (rate limiting)
+2. **ESCALATE.md** (https://escalate.md) — Raise alarm (approval gates)
+3. **FAILSAFE.md** (https://failsafe.md) — Fall back safely (state recovery)
+4. **KILLSWITCH.md** (https://killswitch.md) — Emergency stop
+5. **TERMINATE.md** (https://terminate.md) — Permanent shutdown
+6. **ENCRYPT.md** (https://encrypt.md) — Data classification
+7. **ENCRYPTION.md** (https://encryption.md) — Encryption implementation
+8. **SYCOPHANCY.md** (https://sycophancy.md) — Prevent bias (← YOU ARE HERE)
+9. **COMPRESSION.md** (https://compression.md) — Context compression
+10. **COLLAPSE.md** (https://collapse.md) — Collapse prevention
+11. **FAILURE.md** (https://failure.md) — Failure mode mapping
+12. **LEADERBOARD.md** (https://leaderboard.md) — Performance benchmarking
+
+## Framework Compatibility
+
+SYCOPHANCY.md is framework-agnostic. Works with:
+- **LangChain** — Agents and tools
+- **AutoGen** — Multi-agent systems
+- **CrewAI** — Agent workflows
+- **Claude Code** — Agentic code generation
+- **Cursor Agent Mode** — IDE-integrated agents
+- **Custom implementations** — Any agent that can self-monitor output patterns
+
+## Getting Started
+
+1. Copy template from https://github.com/Sycophancy-md/spec
+2. Place SYCOPHANCY.md in project root
+3. Define your three detection patterns
+4. Configure citation requirements
+5. Establish disagreement protocol
+6. Set alert channels and thresholds
+7. Implement detection in agent initialization
+8. Test by intentionally triggering each detection pattern
+
+## Key Terms
+
+**AI sycophancy** — Tailoring outputs to user preference instead of factual accuracy
+**Opinion reversal on pushback** — Changing position based on user disagreement without new evidence
+**Agreement without evidence** — Confirming user assertions without independent verification
+**Excessive affirmation** — Overusing praise language to appear agreeable
+**Citation requirement** — Factual claims must include source reference and confidence level
+**Disagreement protocol** — Rules for respectfully maintaining evidence-based position when disagreeing with user
+**SYCOPHANCY.md specification** — Open standard for AI agent honesty and bias prevention
+
+## Contact
+
+- Specification Repository: https://github.com/Sycophancy-md/spec
+- Website: https://sycophancy.md
+- Email: info@sycophancy.md
+
+## License
+
+MIT — Free to use, modify, and distribute. See https://github.com/Sycophancy-md/spec for details.
+
+---
+
+**Last Updated:** 11 March 2026
+**Status:** Open Standard v1.0
